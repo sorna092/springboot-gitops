@@ -28,13 +28,15 @@ spec:
           labelSelector:
             matchLabels:
               app: springboot-app
-            securityContext:
+      securityContext:
         runAsNonRoot: true
         runAsUser: 10001
         runAsGroup: 10001
         seccompProfile:
           type: RuntimeDefault
-          # Jenkins rewrites this line on every build
+      terminationGracePeriodSeconds: 30
+      containers:
+        - name: app
           image: sorna724/springboot-app:9-1bb48f4
           imagePullPolicy: IfNotPresent
           ports:
