@@ -37,14 +37,14 @@ spec:
       terminationGracePeriodSeconds: 30
       containers:
         - name: app
-          image: sorna724/springboot-app:9-1bb48f4
+          image: sorna724/springboot-app:10-34e7e0b
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
               containerPort: 8080
           env:
             - name: APP_VERSION
-              value: "9-1bb48f4" # APP_VERSION
+              value: "10-34e7e0b" # APP_VERSION
           resources:
             requests:
               cpu: 250m
